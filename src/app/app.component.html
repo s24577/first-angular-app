@@ -6,13 +6,13 @@
         [user]="user"
         (select)="onSelectUser($event)"/>
     </li>
-<!--    @for (user of users){-->
-<!--      <li>-->
-<!--        <app-user-->
-<!--          [user]="user"-->
-<!--          (select)="onSelectUser($event)"/>-->
-<!--      </li>-->
-<!--    }-->
+    @for (user of users; track user.id){
+      <li>
+        <app-user
+          [user]="user"
+          (select)="onSelectUser($event)"/>
+      </li>
+    }
 
   </ul>
   <app-tasks [name]="selectedUser? selectedUser.name: ''"/>
