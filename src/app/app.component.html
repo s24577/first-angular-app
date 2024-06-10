@@ -1,22 +1,19 @@
 <app-header/>
 <main>
   <ul id="users">
-
-      <li>
-        <app-user
-          [user]="users[0]"
-          (select)="onSelectUser($event)"/>
-      </li>
-      <li>
-        <app-user
-          [user]="users[1]"
-          (select)="onSelectUser($event)"/>
-    </li>
-    <li>
+    <li *ngFor="let user of users;">
       <app-user
-        [user]="users[2]"
+        [user]="user"
         (select)="onSelectUser($event)"/>
     </li>
+<!--    @for (user of users){-->
+<!--      <li>-->
+<!--        <app-user-->
+<!--          [user]="user"-->
+<!--          (select)="onSelectUser($event)"/>-->
+<!--      </li>-->
+<!--    }-->
+
   </ul>
   <app-tasks [name]="selectedUser? selectedUser.name: ''"/>
 
