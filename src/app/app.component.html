@@ -6,7 +6,10 @@
       <li>
         <app-user
           [user]="user"
-          (select)="onSelectUser($event)"/>
+          (select)="onSelectUser($event)"
+          [selected]="user.id === selectedUserId"
+        />
+
       </li>
     }
   </ul>
